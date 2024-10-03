@@ -18,7 +18,7 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Github\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Instagram\n  \n\n  \n  \n\n\nI am a student at Monash University looking forward to pursuing avenues revolving around business analytics and financial operations in the world of bits and bytes. My vision extends beyond academics, eager to apply my analytical skills and strategic mindset to real-world business challenges, aspiring to make a meaningful impact in the fields of marketing and data-driven decision-making.\n\n\n\nData Modelling\nData Mining\nTime-series Analysis\nData visualization\nData Storytelling\nReal-Time Data Processing\nGeospatial Data Analysis"
+    "text": "Github\n  \n  \n    \n     LinkedIn\n  \n  \n    \n     Instagram\n  \n\n  \n  \n\n\nI am a student at Monash University looking forward to pursuing avenues revolving around business analytics and financial operations in the world of bits and bytes. My vision extends beyond academics, eager to apply my analytical skills and strategic mindset to real-world business challenges, aspiring to make a meaningful impact in the fields of marketing and data-driven decision-making.\n\n\n\n\nData Modelling\nData Mining\nTime-series Analysis\nData visualization\nData Storytelling\nReal-Time Data Processing"
   },
   {
     "objectID": "posts/Analysis of Summer-Themed Movies: Trends, Genres, and Popularity/blogpost.html",
@@ -53,7 +53,7 @@
     "href": "about.html#interests",
     "title": "About",
     "section": "",
-    "text": "Data Modelling\nData Mining\nTime-series Analysis\nData visualization\nData Storytelling\nReal-Time Data Processing\nGeospatial Data Analysis"
+    "text": "Data Modelling\nData Mining\nTime-series Analysis\nData visualization\nData Storytelling\nReal-Time Data Processing"
   },
   {
     "objectID": "about.html#technical-skills",
@@ -61,5 +61,12 @@
     "title": "About",
     "section": "Technical Skills:",
     "text": "Technical Skills:\n\nR Studio\nPython\nSQL\nTableau\nMicrosoft Office\nGit"
+  },
+  {
+    "objectID": "about.html#neharika-shah",
+    "href": "about.html#neharika-shah",
+    "title": "About",
+    "section": "",
+    "text": "I am a student at Monash University looking forward to pursuing avenues revolving around business analytics and financial operations in the world of bits and bytes. My vision extends beyond academics, eager to apply my analytical skills and strategic mindset to real-world business challenges, aspiring to make a meaningful impact in the fields of marketing and data-driven decision-making."
   }
 ]

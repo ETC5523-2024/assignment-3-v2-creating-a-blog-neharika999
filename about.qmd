@@ -19,3 +19,44 @@ about:
 
 ---
 
+:::{#ppc}
+
+## Neharika Shah
+
+I am a student at Monash University looking forward to pursuing avenues revolving around business analytics and financial operations in the world of bits and bytes. My vision extends beyond academics, eager to apply my analytical skills and strategic mindset to real-world business challenges, aspiring to make a meaningful impact in the fields of marketing and data-driven decision-making. 
+
+## Interests
+
+- Data Modelling
+- Data Mining
+- Time-series Analysis
+- Data visualization
+- Data Storytelling
+- Real-Time Data Processing
+
+:::
+
+<div class="skills-education" style="display: flex; justify-content: space-between;">
+
+<div style="flex: 1; padding-right: 20px;">
+## Technical Skills:
+
+- R Studio
+- Python
+- SQL
+- Tableau
+- Microsoft Office 
+- Git
+</div>
+
+<div style="flex: 1;">
+# Education
+
+##### Masters of Business Analytics
+###### Monash University, Australia {style="color: gray"}
+
+##### Bachelor of Business Administration
+###### Christ University, India {style="color: gray"}
+</div>
+
+</div>
