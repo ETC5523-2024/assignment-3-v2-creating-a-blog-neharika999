@@ -112,3 +112,31 @@ ggplot(top_genres, aes(x = genres, y = n)) +
         plot.caption = element_text(hjust = 0.5))
 ```
 
+Drama and comedy take the lead as the most popular genres in summer-themed films followed by romance and documentaries in @fig-distribution.
+These findings highlight how summer movies often center around lighthearted narratives or emotional stories, perfectly capturing the essence of personal growth, adventure, and the fun-filled experiences that many associate with the season.
+
+```{r message=FALSE,warning=FALSE,echo=FALSE}
+#| label: tbl-top-movies
+
+library(kableExtra)
+top_10_movies <- summer_movies %>%
+  arrange(desc(average_rating)) %>%  
+  select(primary_title, genres, average_rating) %>% head(10)
+
+
+kable(top_10_movies, 
+      col.names = c("Movie Title", "Genres", "Average Rating"),
+      caption = "Top 10 Summer-Themed Movies by Average Rating") %>%
+  kable_styling(full_width = FALSE, 
+                bootstrap_options = c("striped", "hover", "condensed", "bordered"))
+```
+
+The @tbl-top-movies showcases the diverse range of top-rated summer-themed movies, which span across genres like documentaries, drama, music, and comedy. While lighthearted genres such as comedy and family films remain popular, the high ratings for more serious genres—particularly documentaries—highlight the broad appeal and evolving nature of summer-themed storytelling. The inclusion of music-themed movies among the top-rated films further aligns with the observation that these films resonate strongly with audiences, adding depth to the overall trends in summer movie preferences.
+ 
+## Conclusion
+
+This analysis sought to uncover trends in the production, genres, and audience reception of summer-themed movies, highlighting how these films resonate with audiences across different categories. Our findings show that comedies and dramas dominate the genre landscape, capturing the spirit of summer with a balance of light-hearted and emotional storytelling. Meanwhile, documentaries and music-themed films also stand out with notably high ratings, suggesting that summer-themed movies have evolved to encompass a broader range of storytelling styles, appealing to diverse audience preferences.
+
+Moreover, the correlation between higher ratings and specific genres like documentaries highlights the "bandwagon effect," where movies that capture a large audience often receive better ratings according to @Article. The bandwagon effect suggests that well-rated films tend to gather momentum and achieve higher popularity, further solidifying their place in the summer movie canon.
+
+In conclusion, summer-themed movies continue to offer a rich mix of genres, from feel-good comedies to thought-provoking documentaries. Their ability to engage a wide audience underscores their cultural relevance, with trends pointing towards an ever-expanding genre diversity that keeps the summer movie tradition alive.
