@@ -1,0 +1,114 @@
+---
+title: "Summer-Themed Movies"
+author: "Neharika Shah"
+date: today
+categories: [movies]
+bibliography: references.bib
+---
+
+# Analysis of Trends,Genres and Popularity
+
+![](summer-movies.jpg)
+
+Summer-themed movies have always captured the magic of the season, whether through light-hearted comedies or dramatic tales of self-discovery. This blog post explores the trends in the production, genre distribution, and audience reception of summer-themed movies using IMDb data, aiming to understand how this niche has evolved over time.
+
+## **Data Description**
+
+1.  **Source of Data**: The data comes from IMDb, available via [@TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-07-30/readme.md) (dataset released on July 30, 2024).
+
+2.  **Description of Variables in the Dataset**:
+
+    **summer_movies.csv:**
+
+    -   `tconst`: Unique identifier for each title (character)
+    -   `title_type`: Format of the title (movie, video, or tvMovie) (character)
+    -   `primary_title`: Popular title used for promotion (character)
+    -   `original_title`: Original title in the original language (character)
+    -   `year`: Release year (integer)
+    -   `runtime_minutes`: Primary runtime in minutes (integer)
+    -   `genres`: Up to three associated genres (character)
+    -   `simple_title`: Lowercase title with punctuation removed (character)
+    -   `average_rating`: Weighted average of user ratings on IMDb (double)
+    -   `num_votes`: Number of votes received on IMDb (integer)
+
+    **summer_movie_genres.csv:**
+
+    -   `tconst`: Unique identifier for each title (character)
+    -   `genres`: Individual genres associated with the title (character)
+    -   The `summer_movie_genres` dataset contains individual genres associated with each movie.
+
+3.  **Data Cleaning Steps**:
+
+    -   **Handled Missing Values**: Identified and addressed missing data entries to ensure completeness and accuracy in the analysis.
+
+    <!-- -->
+
+    -   **Removed Duplicates**: Checked for and eliminated any duplicate records to avoid over-representation of movies in the dataset.
+
+    -   **Standardized Genre Formats**: Cleaned and standardized genre entries to ensure consistency, allowing for accurate genre analysis and visualization.
+
+    -   **Filtered Out Irrelevant Data**: Removed movies with less than 10 IMDb votes to focus on titles with sufficient audience engagement.
+
+    -   **Converted Data Types**: Ensured all columns, such as `year` and `runtime_minutes`, were in the correct data format (integer or character) for proper analysis.
+
+```{r eval=FALSE}
+# snippet of the code which involves data cleaning
+summer_movies <- summer_movies %>%
+  drop_na() %>%
+  distinct() %>%
+  mutate(genres = str_to_lower(genres))
+```
+
+The above code snippet demonstrates handling missing values by removing incomplete entries, eliminating duplicate records for accuracy, and standardizing genre formats by converting them to lowercase for consistency.
+
+## Analysis
+
+Let's dive into the trends and insights we uncovered.
+
+**Trend in Summer Movie Production**
+
+```{r message=FALSE,warning=FALSE,echo=FALSE}
+library(tidytuesdayR)
+library(tidyverse)
+library(dplyr)
+library(forcats)
+library(scales)
+summer_movie_genres <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-07-30/summer_movie_genres.csv')
+summer_movies <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2024/2024-07-30/summer_movies.csv')
+```
+
+```{r,echo=FALSE,warning=FALSE,message=FALSE}
+#| fig-cap: "Number of Summer-Themed Movies Produced Each Year"
+#| label: fig-movies
+# Preparing the data 
+release_timing <- summer_movies %>% group_by(year) %>%
+  summarise(movie_count = n()) %>% filter(year<2024)
+# Plotting release timing
+ggplot(release_timing, aes(x = year, y = movie_count)) +
+  geom_line() + geom_point() + theme_bw() +
+  labs(x = "Year",y = "Number of Movies")+
+  theme(plot.title = element_text(hjust = 0.5),
+        plot.caption = element_text(hjust = 0.5))
+
+```
+We can observe a surge in the production of summer-themed movies during the 1980s and 1990s in @fig-movies, suggesting that this period was a golden era for summer films. While the trend fluctuated in the following years, it remains a popular genre with consistent releases.
+
+```{r message=FALSE,warning=FALSE,echo=FALSE}
+#| fig-cap: "Top 10 Genre Distribution of Summer-Themed Movies"
+#| label: fig-distribution
+# Reordering genres by count in descending order
+top_genres <- summer_movie_genres %>%
+  count(genres, sort = TRUE) %>%
+  top_n(10, n) %>% arrange(desc(n)) %>%  
+  mutate(genres = fct_reorder(genres, -n)) 
+
+ggplot(top_genres, aes(x = genres, y = n)) +  
+  geom_bar(stat = "identity", fill = "blue", color = "black") + 
+  labs(x = "Genres", y = "Count") +
+  theme_bw() + 
+  theme(plot.title = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle = 45, hjust = 1, size = 8),
+        legend.position = "none",
+        plot.caption = element_text(hjust = 0.5))
+```
+
