@@ -15,7 +15,7 @@ format:
   html:
     theme: cerulean
     css: styles.css
-    backgroundcolor: "#F5F5F5"
+    backgroundcolor: "#ECF0F1"
 
 
 

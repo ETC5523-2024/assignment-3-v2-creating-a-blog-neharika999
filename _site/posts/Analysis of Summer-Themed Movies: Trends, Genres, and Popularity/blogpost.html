@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Neharika Shah">
-<meta name="dcterms.date" content="2024-10-03">
+<meta name="dcterms.date" content="2024-10-04">
 
 <title>My Data Story Journey - Summer-Themed Movies</title>
 <style>
@@ -129,7 +129,7 @@ div.csl-indent {
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -191,7 +191,7 @@ div.csl-indent {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 3, 2024</p>
+        <p class="date">October 4, 2024</p>
       </div>
     </div>
     
@@ -202,7 +202,20 @@ div.csl-indent {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#analysis-of-trendsgenres-and-popularity" id="toc-analysis-of-trendsgenres-and-popularity" class="nav-link active" data-scroll-target="#analysis-of-trendsgenres-and-popularity">Analysis of Trends,Genres and Popularity</a>
+  <ul class="collapse">
+  <li><a href="#data-description" id="toc-data-description" class="nav-link" data-scroll-target="#data-description"><strong>Data Description</strong></a></li>
+  <li><a href="#analysis" id="toc-analysis" class="nav-link" data-scroll-target="#analysis">Analysis</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -235,27 +248,25 @@ div.csl-indent {
 <p><strong>summer_movie_genres.csv:</strong></p>
 <ul>
 <li><code>tconst</code>: Unique identifier for each title (character)</li>
-<li><code>genres</code>: Individual genres associated with the title (character)</li>
-<li>The <code>summer_movie_genres</code> dataset contains individual genres associated with each movie.</li>
+<li><code>genres</code>: Individual genres associated with the title (character) The <code>summer_movie_genres</code> dataset contains individual genres associated with each movie.</li>
 </ul></li>
 <li><p><strong>Data Cleaning Steps</strong>:</p>
 <ul>
-<li><strong>Handled Missing Values</strong>: Identified and addressed missing data entries to ensure completeness and accuracy in the analysis.</li>
-</ul>
-<!-- -->
-<ul>
+<li><p><strong>Handled Missing Values</strong>: Identified and addressed missing data entries to ensure completeness and accuracy in the analysis.</p></li>
 <li><p><strong>Removed Duplicates</strong>: Checked for and eliminated any duplicate records to avoid over-representation of movies in the dataset.</p></li>
 <li><p><strong>Standardized Genre Formats</strong>: Cleaned and standardized genre entries to ensure consistency, allowing for accurate genre analysis and visualization.</p></li>
 <li><p><strong>Filtered Out Irrelevant Data</strong>: Removed movies with less than 10 IMDb votes to focus on titles with sufficient audience engagement.</p></li>
 <li><p><strong>Converted Data Types</strong>: Ensured all columns, such as <code>year</code> and <code>runtime_minutes</code>, were in the correct data format (integer or character) for proper analysis.</p></li>
 </ul></li>
 </ol>
+<div style="color: blue;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># snippet of the code which involves data cleaning</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>summer_movies <span class="ot">&lt;-</span> summer_movies <span class="sc">%&gt;%</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">genres =</span> <span class="fu">str_to_lower</span>(genres))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 <p>The above code snippet demonstrates handling missing values by removing incomplete entries, eliminating duplicate records for accuracy, and standardizing genre formats by converting them to lowercase for consistency.</p>
 </section>
@@ -376,7 +387,7 @@ Table&nbsp;1: Top 10 Summer-Themed Movies by Average Rating
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>This analysis sought to uncover trends in the production, genres, and audience reception of summer-themed movies, highlighting how these films resonate with audiences across different categories. Our findings show that comedies and dramas dominate the genre landscape, capturing the spirit of summer with a balance of light-hearted and emotional storytelling. Meanwhile, documentaries and music-themed films also stand out with notably high ratings, suggesting that summer-themed movies have evolved to encompass a broader range of storytelling styles, appealing to diverse audience preferences.</p>
-<p>Moreover, the correlation between higher ratings and specific genres like documentaries highlights the “bandwagon effect,” where movies that capture a large audience often receive better ratings according to <span class="citation" data-cites="Article">Limited (<a href="#ref-Article" role="doc-biblioref">2024</a>)</span>. The bandwagon effect suggests that well-rated films tend to gather momentum and achieve higher popularity, further solidifying their place in the summer movie canon.</p>
+<p>Moreover, the relation between higher ratings and specific genres like documentaries highlights the “bandwagon effect,” where movies that capture a large audience often receive better ratings according to <span class="citation" data-cites="Article">Limited (<a href="#ref-Article" role="doc-biblioref">2024</a>)</span>. The bandwagon effect suggests that well-rated films tend to gather momentum and achieve higher popularity, further solidifying their place in the summer movie canon.</p>
 <p>In conclusion, summer-themed movies continue to offer a rich mix of genres, from feel-good comedies to thought-provoking documentaries. Their ability to engage a wide audience underscores their cultural relevance, with trends pointing towards an ever-expanding genre diversity that keeps the summer movie tradition alive.</p>
 
 
