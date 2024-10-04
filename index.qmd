@@ -1,5 +1,5 @@
 ---
-title: "Behind the Screen: A Data-Driven Exploration of Summer-Themed Movies"
+title: "Unraveling Summer Cinema: Trends and Genres Through Data"
 listing:
   contents: posts
   sort: "date desc"
@@ -11,3 +11,4 @@ page-layout: full
 title-block-banner: true
 ---
 
+# <u>Featured:<br><br>

@@ -31,7 +31,6 @@ I am a student at Monash University looking forward to pursuing avenues revolvin
 - Data Mining
 - Time-series Analysis
 - Data visualization
-- Data Storytelling
 - Real-Time Data Processing
 
 :::
@@ -50,13 +49,13 @@ I am a student at Monash University looking forward to pursuing avenues revolvin
 </div>
 
 <div style="flex: 1;">
-# Education
+## Education
 
-##### Masters of Business Analytics
-###### Monash University, Australia {style="color: gray"}
+###### Masters of Business Analytics
+###### Monash University, Australia {style="color: black"}
 
-##### Bachelor of Business Administration
-###### Christ University, India {style="color: gray"}
+###### Bachelor of Business Administration
+###### Christ University, India {style="color: black"}
 </div>
 
 </div>

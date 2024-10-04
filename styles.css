@@ -1,5 +1,33 @@
 /* css styles */
+body{
+  background: #E0FFFF;
+}
 .navbar-dark, .quarto-title-banner {
-  background-color: #006DAE;
+  background: url("banner.webp");
+  background-position: right;
+  height: 30vh;
+
+}
+
+.quarto-title-banner .quarto-title .title{
+  font-weight: 900;
+}
+.quarto-title-banner h1{
+  position: relative;
+  top: 40%;
+    width: fit-content;
+    padding: 1rem;
+  text-align: center;
+  color: #0445ebde;
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.about-entity img{
+  border: 3px solid black;
 }
 
